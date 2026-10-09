@@ -1,8 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KhabarTez
 
-## Getting Started
+KhabarTez is a Hindi news website that provides the latest news and updates across different categories.
 
-First, run the development server:
+## Features
 
 ```bash
 npm run dev
