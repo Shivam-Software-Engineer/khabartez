@@ -129,7 +129,7 @@ export default function Header() {
   </section>
 
   {/* ================= MAIN NAV ================= */}
-  {/* ================= MAIN NAV ================= */}
+
 
 {/* ================= MOBILE OVERLAY ================= */}
 <label
@@ -627,7 +627,7 @@ export default function Header() {
 </section>
 
   {/* ================= BREAKING TICKER ================= */}
-  <section className="bg-red-700 px-3">
+  <section className=" bg-red-700 px-3">
     <div className="mx-auto flex max-w-[1320px] items-center gap-3 py-2.5">
       <span className="shrink-0 rounded bg-white px-3 py-1 text-xs font-bold text-red-700 sm:text-sm">
         BREAKING NEWS
