@@ -248,45 +248,7 @@ export default function HeroSection() {
         </div>
 
         {/* Bottom Highlights */}
-        <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
-
-          <div className="rounded-lg border border-gray-100 bg-gray-50 px-3 py-3 text-center">
-            <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">
-              Latest
-            </p>
-            <p className="mt-1 text-sm font-bold text-gray-900">
-              120+ Stories
-            </p>
-          </div>
-
-          <div className="rounded-lg border border-gray-100 bg-gray-50 px-3 py-3 text-center">
-            <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">
-              Updates
-            </p>
-            <p className="mt-1 text-sm font-bold text-gray-900">
-              Every Hour
-            </p>
-          </div>
-
-          <div className="rounded-lg border border-gray-100 bg-gray-50 px-3 py-3 text-center">
-            <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">
-              Coverage
-            </p>
-            <p className="mt-1 text-sm font-bold text-gray-900">
-              All India
-            </p>
-          </div>
-
-          <div className="rounded-lg border border-gray-100 bg-gray-50 px-3 py-3 text-center">
-            <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">
-              Trusted
-            </p>
-            <p className="mt-1 text-sm font-bold text-gray-900">
-              Fast & Accurate
-            </p>
-          </div>
-
-        </div>
+        
       </div>
     </section>
   )
