@@ -1,98 +1,7 @@
 
-const latestStories = [
-  {
-    id: 1,
-    category: "National",
-    categoryColor: "bg-red-50 text-red-700",
-    title:
-      "India's Infrastructure Push: Major Projects Set to Transform Connectivity",
-    description:
-      "A closer look at the infrastructure developments shaping transport, cities and connectivity across the country.",
-    image:
-      "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85",
-    date: "2 hours ago",
-    author: "News Desk",
-  },
-  {
-    id: 2,
-    category: "Business",
-    categoryColor: "bg-emerald-50 text-emerald-700",
-    title: "Markets, Startups and the Economy: What Investors Are Watching",
-    description:
-      "Explore the latest business trends, market movements and developments in India's growing economy.",
-    image:
-      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=900&q=85",
-    date: "3 hours ago",
-    author: "Business Desk",
-  },
-  {
-    id: 3,
-    category: "Technology",
-    categoryColor: "bg-blue-50 text-blue-700",
-    title: "The Technology Trends Changing How India Works and Connects",
-    description:
-      "From digital services to emerging innovations, technology continues to reshape everyday life.",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=85",
-    date: "4 hours ago",
-    author: "Tech Desk",
-  },
-  {
-    id: 4,
-    category: "Sports",
-    categoryColor: "bg-orange-50 text-orange-700",
-    title: "A Look at the Sporting Stories and Matchups Making Headlines",
-    description:
-      "Catch up on major sporting events, standout performances and the fixtures fans are following.",
-    image:
-      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=85",
-    date: "5 hours ago",
-    author: "Sports Desk",
-  },
-  {
-    id: 5,
-    category: "World",
-    categoryColor: "bg-purple-50 text-purple-700",
-    title: "Global Developments to Watch and Why They Matter to India",
-    description:
-      "A roundup of international developments across diplomacy, society and the global economy.",
-    image:
-      "https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=900&q=85",
-    date: "6 hours ago",
-    author: "World Desk",
-  },
-];
+import Link from "next/link";
+import { newsStories, trendingStories } from "../../Data/news";
 
-const trendingStories = [
-  {
-    id: 1,
-    category: "National",
-    title: "The biggest national stories you need to know today",
-    image:
-      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=240&q=80",
-  },
-  {
-    id: 2,
-    category: "Business",
-    title: "Key market developments attracting investor attention",
-    image:
-      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=240&q=80",
-  },
-  {
-    id: 3,
-    category: "Sports",
-    title: "The sporting moments everyone is talking about",
-    image:
-      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=240&q=80",
-  },
-  {
-    id: 4,
-    category: "Technology",
-    title: "New technology trends worth keeping an eye on",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=240&q=80",
-  },
-];
 
 export default function LatestNews() {
   return (
@@ -145,24 +54,24 @@ export default function LatestNews() {
             </div>
 
             <div className="divide-y divide-gray-100">
-              {latestStories.map((story) => (
+              {newsStories.map((story) => (
                 <article
                   key={story.id}
                   className="group flex flex-col gap-4 py-5 first:pt-0 sm:flex-row sm:gap-5"
                 >
                   {/* Story Image */}
-                  <a
-                    href={`/news/${story.id}`}
-                    aria-label={`Read: ${story.title}`}
-                    className="relative block aspect-[16/9] w-full shrink-0 overflow-hidden rounded-xl bg-gray-100 sm:aspect-[4/3] sm:w-[220px] md:w-[250px]"
-                  >
-                    <img
-                      src={story.image}
-                      alt={story.title}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                    />
-                  </a>
+                 <Link
+  href={`/news/${story.slug}`}
+  aria-label={`Read: ${story.title}`}
+  className="relative block aspect-[16/9] w-full shrink-0 overflow-hidden rounded-xl bg-gray-100 sm:aspect-[4/3] sm:w-[220px] md:w-[250px]"
+>
+  <img
+    src={story.image}
+    alt={story.title}
+    loading="lazy"
+    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+  />
+</Link>
 
                   {/* Story Content */}
                   <div className="flex min-w-0 flex-1 flex-col items-start">
@@ -173,9 +82,9 @@ export default function LatestNews() {
                     </span>
 
                     <h4 className="mt-2.5 text-lg font-extrabold leading-snug text-gray-950 transition-colors group-hover:text-red-700 sm:text-xl">
-                      <a href={`/news/${story.id}`}>
-                        {story.title}
-                      </a>
+                      <Link href={`/news/${story.slug}`}>
+  {story.title}
+</Link>
                     </h4>
 
                     <p className="mt-2 line-clamp-2 text-sm leading-6 text-gray-500">
@@ -224,11 +133,11 @@ export default function LatestNews() {
 
               <div className="divide-y divide-gray-100 px-4">
                 {trendingStories.map((story, index) => (
-                  <a
-                    key={story.id}
-                    href={`/news/${story.id}`}
-                    className="group flex items-center gap-3 py-4"
-                  >
+                  <Link
+  key={story.id}
+  href={`/news/${story.slug}`}
+  className="group flex items-center gap-3 py-4"
+>
                     <span className="w-5 shrink-0 text-xl font-black text-gray-200 transition-colors group-hover:text-red-600">
                       {String(index + 1).padStart(2, "0")}
                     </span>
@@ -251,7 +160,7 @@ export default function LatestNews() {
                         {story.title}
                       </h4>
                     </div>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

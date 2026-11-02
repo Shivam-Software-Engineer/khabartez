@@ -4,10 +4,12 @@ import CategorySection from "./Home/CategorySection/CategorySection";
 import LatestNews from "./Home/LatestNews/LatestNews";
 import TrendingNews from "./Home/TrendingNews/TrendingNews";
 
+
 export default function Home() {
   return (
     <>
      <main>
+      
         <Advertisement />
         <Herosection />
         <CategorySection />
